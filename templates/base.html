@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Task Manager</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <aside class="sidebar">
+    <h2>📚 TaskMate</h2>
+    <nav>
+      <a href="{{ url_for('dashboard') }}" class="{{ 'active' if request.endpoint == 'dashboard' }}">🏠 Dashboard</a>
+      <a href="{{ url_for('tasks') }}" class="{{ 'active' if request.endpoint == 'tasks' }}">📋 All Tasks</a>
+      <a href="{{ url_for('add_task') }}" class="{{ 'active' if request.endpoint == 'add_task' }}">➕ Add Task</a>
+    </nav>
+  </aside>
+  <main>
+    {% for category, message in get_flashed_messages(with_categories=true) %}
+      <div class="flash {{ category }}">{{ message }}</div>
+    {% endfor %}
+    {% if content_404 %}
+      <h1>Page not found</h1><a class="btn" href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+    {% else %}
+      {% block content %}{% endblock %}
+    {% endif %}
+  </main>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% from "_macros.html" import task_table %}
+{% block content %}
+<div class="head"><h1>Dashboard</h1><a class="btn" href="{{ url_for('add_task') }}">+ Add Task</a></div>
+<form method="get" class="filters">
+  <select name="student" onchange="this.form.submit()"><option value="">Whole class ({{ students|length }} students)</option>
+    {% for s in students %}<option {{ 'selected' if student == s }}>{{ s }}</option>{% endfor %}</select>
+</form>
+<div class="cards">
+  <div class="card c-total"><span>{{ stats.total }}</span>Total Tasks</div>
+  <div class="card c-pending"><span>{{ stats.pending }}</span>Pending</div>
+  <div class="card c-done"><span>{{ stats.completed }}</span>Completed</div>
+  <div class="card c-overdue"><span>{{ stats.overdue }}</span>Overdue</div>
+</div>
+<div class="panel">
+  <h3>Progress: {{ stats.percent }}% complete</h3>
+  <div class="bar"><div style="width: {{ stats.percent }}%"></div></div>
+</div>
+<div class="charts">
+  <div class="panel"><h3>Status</h3><canvas id="statusChart"></canvas></div>
+  <div class="panel"><h3>Priority</h3><canvas id="priorityChart"></canvas></div>
+  <div class="panel"><h3>Tasks by Subject</h3><canvas id="subjectChart"></canvas></div>
+</div>
+<div class="panel"><h3>⚠️ Overdue Tasks</h3>{{ task_table(late) }}</div>
+<div class="panel"><h3>⏰ Upcoming Deadlines</h3>{{ task_table(upcoming) }}</div>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+const C = {{ charts|tojson }};
+const opts = {plugins: {legend: {position: 'bottom'}}};
+new Chart(document.getElementById('statusChart'), {type: 'doughnut', options: opts,
+  data: {labels: ['Completed', 'Pending', 'Overdue'], datasets: [{data: C.status, backgroundColor: ['#16a34a', '#6b7280', '#dc2626']}]}});
+new Chart(document.getElementById('priorityChart'), {type: 'bar', options: {plugins: {legend: {display: false}}, scales: {y: {beginAtZero: true, ticks: {precision: 0}}}},
+  data: {labels: ['Low', 'Medium', 'High'], datasets: [{data: C.priority, backgroundColor: ['#16a34a', '#d97706', '#dc2626']}]}});
+new Chart(document.getElementById('subjectChart'), {type: 'bar', options: {indexAxis: 'y', plugins: {legend: {display: false}}, scales: {x: {beginAtZero: true, ticks: {precision: 0}}}},
+  data: {labels: C.subjects, datasets: [{data: C.subject_counts, backgroundColor: '#4f46e5'}]}});
+</script>
+{% endblock %}
