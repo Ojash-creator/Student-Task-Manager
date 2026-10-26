@@ -241,11 +241,9 @@ Check each provider's current free-tier terms before deploying.
 ## Screenshots
 | Screen | Preview |
 |---|---|
-| Dashboard with charts |<img width="1881" height="973" alt="Screenshot 2026-10-25 110759" src="https://github.com/user-attachments/assets/20eadf04-cc5e-4572-bf2d-ab0d567aa563" /> |
-
-| Task list with filters | <img width="1508" height="952" alt="Screenshot 2026-10-25 110814" src="https://github.com/user-attachments/assets/48799d9b-7378-494e-b435-44622fe4bba1" /> |
-
-| Add / edit task form |<img width="898" height="965" alt="Screenshot 2026-10-25 110846" src="https://github.com/user-attachments/assets/f8522653-5186-4b39-91e2-de0719165768" /> |
+| Dashboard with charts |<img width="1700" height="600" alt="Screenshot 2026-10-25 110759" src="https://github.com/user-attachments/assets/20eadf04-cc5e-4572-bf2d-ab0d567aa563" /> 
+| Task list with filters | <img width="1450" height="600" alt="Screenshot 2026-10-25 110814" src="https://github.com/user-attachments/assets/48799d9b-7378-494e-b435-44622fe4bba1" /> 
+| Add / edit task form |<img width="500" height="350" alt="Screenshot 2026-10-25 110846" src="https://github.com/user-attachments/assets/f8522653-5186-4b39-91e2-de0719165768" /> 
 
 ## Git and GitHub Workflow
 
