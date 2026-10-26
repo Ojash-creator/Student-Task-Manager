@@ -244,10 +244,10 @@ Save your screenshots in `docs/screenshots/` using these names so the images bel
 
 | Screen | Preview |
 |---|---|
-| Dashboard with charts | ![Dashboard](docs/screenshots/dashboard.png) |
+| Dashboard with charts |<img width="1881" height="973" alt="Screenshot 2026-10-25 110759" src="https://github.com/user-attachments/assets/20eadf04-cc5e-4572-bf2d-ab0d567aa563" />
+
 | Task list with filters | ![Task list](docs/screenshots/tasks.png) |
 | Add / edit task form | ![Task form](docs/screenshots/task-form.png) |
-| Mobile view | ![Mobile view](docs/screenshots/mobile.png) |
 
 ## Git and GitHub Workflow
 
