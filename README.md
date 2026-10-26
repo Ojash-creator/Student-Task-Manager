@@ -239,15 +239,13 @@ The app needs a Python server, so it cannot run on GitHub Pages. Options:
 Check each provider's current free-tier terms before deploying.
 
 ## Screenshots
-
-Save your screenshots in `docs/screenshots/` using these names so the images below appear.
-
 | Screen | Preview |
 |---|---|
-| Dashboard with charts |<img width="1881" height="973" alt="Screenshot 2026-10-25 110759" src="https://github.com/user-attachments/assets/20eadf04-cc5e-4572-bf2d-ab0d567aa563" />
+| Dashboard with charts |<img width="1881" height="973" alt="Screenshot 2026-10-25 110759" src="https://github.com/user-attachments/assets/20eadf04-cc5e-4572-bf2d-ab0d567aa563" /> |
 
-| Task list with filters | ![Task list](docs/screenshots/tasks.png) |
-| Add / edit task form | ![Task form](docs/screenshots/task-form.png) |
+| Task list with filters | <img width="1508" height="952" alt="Screenshot 2026-10-25 110814" src="https://github.com/user-attachments/assets/48799d9b-7378-494e-b435-44622fe4bba1" /> |
+
+| Add / edit task form |<img width="898" height="965" alt="Screenshot 2026-10-25 110846" src="https://github.com/user-attachments/assets/f8522653-5186-4b39-91e2-de0719165768" /> |
 
 ## Git and GitHub Workflow
 
